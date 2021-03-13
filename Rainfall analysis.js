@@ -3,9 +3,9 @@
 
 // import image collection 
 var chirps = ee.ImageCollection("UCSB-CHG/CHIRPS/DAILY");
-var rain2020 = chirps.filterDate("2020-01-01","2020-12-30").sum()
+var rain2020 = chirps.filterDate("yyyy-mm-dd","yyyy-mm-dd").sum()
 
-//filter for Nepal
+//clip for Nepal
 //load your shp file of Nepal
 
 // add map
@@ -17,19 +17,15 @@ Map.addLayer(rain2020.clip(nepal),{min:500,max:4500,palette:"lightblue,blue,dark
 var gsmp = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/operational");
 
 // Define start and end date
-var startDate = ee.Date('2020-06-04');
-var endDate = ee.Date('2020-06-07');
+var startDate = ee.Date('yyyy-mm-dd'); //2020-06-04
+var endDate = ee.Date('yyyy-mm-dd'); //2020-06-07
 
 // Define collection.
 var pcp = gsmp.select('hourlyPrecipRateGC').filterDate(startDate, endDate).filterBounds(nepal);
-
-print(pcp);
-
 var tp = pcp.sum();
-
 var tpcp_viz = {min: 0,max: 70, palette: ['white','blue','darkblue']};
 
-Map.addLayer(nepal);
+//Map.addLayer(nepal);
 Map.addLayer(tp.clip(nepal),tpcp_viz, "Total precipitation");
 
 //legend
