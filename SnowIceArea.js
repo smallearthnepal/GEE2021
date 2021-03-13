@@ -1,12 +1,12 @@
-//Snow and ice area in Langtang River Basin during winter 2020 and 2021
+//compare snow and ice area in Langtang River Basin during winter 2020 and 2021
 //load landsat 8 image collection as l8
-//load Langtang river basin shp file
+//load Langtang river basin shp file //landtangrb
 
 //for winter 2020
 
 var ic2020 = l8.filterBounds(landtangrb)
-    .filterDate('2019-12-01','2020-02-28')
-    .filterMetadata('CLOUD_COVER', 'less_than', 15);
+    .filterDate('yyyy-mm-dd','yyyy-mm-dd') //'2019-12-01','2020-02-28'
+    .filterMetadata('CLOUD_COVER', 'less_than', xx); //15
     
 print (ic2020);
 var image2020 = ic2020.median();
@@ -18,8 +18,8 @@ Map.addLayer(image2020.clip(landtangrb), {bands: ["B6","B5","B4"]}, 'Landsat');
 
 //for winter 2021
 var ic2021 = l8.filterBounds(landtangrb)
-    .filterDate('2020-12-01','2021-02-28')
-    .filterMetadata('CLOUD_COVER', 'less_than', 15);
+    .filterDate('yyyy-mm-dd','yyyy-mm-dd') //'2020-12-01','2021-02-28'
+    .filterMetadata('CLOUD_COVER', 'less_than', xx); //15
     
 print (ic2021);
 var image2021 = ic2021.median();
