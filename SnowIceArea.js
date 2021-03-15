@@ -14,7 +14,7 @@ var image2020 = ic2020.median();
 print(image2020);
 
 //snow ice detection
-Map.addLayer(image2020.clip(landtangrb), {bands: ["B6","B5","B4"]}, 'Landsat');
+Map.addLayer(image2020.clip(landtangrb), {bands: ["B6","B5","B4"]}, 'snowice 2020');
 
 //for winter 2021
 var ic2021 = l8.filterBounds(landtangrb)
@@ -27,7 +27,7 @@ var image2021 = ic2021.median();
 print(image2021);
 
 //snow ice detection
-Map.addLayer(image2021.clip(landtangrb), {bands: ["B6","B5","B4"]}, 'Landsat');
+Map.addLayer(image2021.clip(landtangrb), {bands: ["B6","B5","B4"]}, 'snowice 2021');
 
 
 var exportBands = ee.List(["B4","B5","B6"]);
