@@ -24,8 +24,8 @@ var ndwiAfter = imgAfter.normalizedDifference(["B2","B4"])
 var ndwiAfter = ndwiAfter.mask(ndwiAfter.gt(threshold))
 
 // add images as true color
-Map.addLayer(ee.Image(imgBefore),{bands:"B3,B2,B1",min:0,max:3000},"Image before breach")
-Map.addLayer(ee.Image(imgAfter),{bands:"B3,B2,B1",min:0,max:3000},"Image after breach")
+Map.addLayer(ee.Image(imgBefore),{bands:"B3","B2","B1",min:0,max:3000},"Image before breach")
+Map.addLayer(ee.Image(imgAfter),{bands:"B3","B2","B1",min:0,max:3000},"Image after breach")
 
 // add water maps
 Map.addLayer(ndwiBefore,{palette:"blue"},"Water before breach")
