@@ -1,6 +1,6 @@
 //compare snow and ice area in Langtang River Basin during winter 2020 and 2021
 //load landsat 8 image collection as l8
-//load Langtang river basin shp file //landtangrb
+//load Langtang river basin shp file //langtangrb
 
 //for winter 2020
 
